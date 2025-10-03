@@ -1,0 +1,3 @@
+bash << EOF
+./release/scripts/bump.sh
+EOF

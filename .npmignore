@@ -1,0 +1,9 @@
+coverage
+/src
+release
+babel.config.cjs
+CODE_OF_CONDUCT.md
+eslint.config.ts
+jest.*
+tsconfig.json
+.*

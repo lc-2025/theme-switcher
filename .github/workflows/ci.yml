@@ -1,0 +1,86 @@
+name: Theme Switcher CI
+run-name: Theme Switcher Continuous-Integration
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+env:
+  DEPENDENCIES_PATH: |
+    ~/.cache
+    ./node_modules
+  DEPENDENCIES_KEY: '**/package-lock.json'
+  ARTIFACTS_NAME: theme-switcher
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: 'npm'
+      - name: Installing dependencies
+        run: npm ci
+      - name: Cache dependencies
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ env.DEPENDENCIES_PATH }}
+          key: modules-${{ hashFiles(env.DEPENDENCIES_KEY) }}
+      - name: Archive project artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACTS_NAME }}
+          include-hidden-files: true
+          path: |
+            .
+            !./node_modules
+  test:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Getting dependencies
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.DEPENDENCIES_PATH }}
+          key: modules-${{ hashFiles(env.DEPENDENCIES_KEY) }}
+          fail-on-cache-miss: true
+      - name: Getting project artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.ARTIFACTS_NAME }}
+      - name: Test applications - Unit
+        run: npm run test:ci
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v4
+        with:
+          name: theme-switcher-test
+          path: ./**/coverage/**/*
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Getting dependencies
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.DEPENDENCIES_PATH }}
+          key: modules-${{ hashFiles(env.DEPENDENCIES_KEY) }}
+          fail-on-cache-miss: true
+      - name: Getting project artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.ARTIFACTS_NAME }}
+      - name: Build packages
+        run: npm run build
+      - name: Archive production verions
+        uses: actions/upload-artifact@v4
+        with:
+          name: theme-switcher-production
+          include-hidden-files: true
+          path: |
+            ./dist
+            ./package*

@@ -1,0 +1,61 @@
+{
+  "name": "@lc-2025/theme-switcher",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "lint": "eslint --fix . && prettier --write . && prettier --check .",
+    "test": "jest --watch",
+    "build": "",
+    "deploy": "npm publish --tag latest --provenance --access public",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lc-2025/theme-switcher.git"
+  },
+  "keywords": [
+    "theme",
+    "switcher",
+    "react",
+    "hook"
+  ],
+  "author": "LC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lc-2025/theme-switcher/issues"
+  },
+  "homepage": "https://github.com/lc-2025/theme-switcher#readme",
+  "dependencies": {
+    "@lc-2025/storage-manager": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-typescript": "^7.27.1",
+    "@eslint/js": "^9.36.0",
+    "@jest/globals": "^30.2.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.6.0",
+    "babel-jest": "^30.2.0",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "jiti": "^2.6.0",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.45.0"
+  },
+  "engines": {
+    "node": ">=22 <=22.20.0",
+    "npm": ">=10"
+  }
+}
