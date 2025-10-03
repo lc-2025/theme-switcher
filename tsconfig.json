@@ -1,15 +1,16 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout
     "rootDir": "./",
     "outDir": "./dist",
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
     "module": "esnext",
+    "moduleResolution": "bundler",
     "target": "esnext",
     "types": [],
     "lib": ["DOM", "ESNext"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     // Other Outputs
     "sourceMap": true,
     "declaration": true,
@@ -27,6 +28,7 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "removeComments": true,
+    "jsx": "preserve",
     // Recommended Options
     "strict": true,
     "verbatimModuleSyntax": false,
@@ -35,6 +37,6 @@
     "moduleDetection": "force",
     "skipLibCheck": true
   },
-  "include": ["./src**/*.ts"],
-  "exclude": ["babel.config.cjs", "dist", "node_modules"]
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
+  "exclude": ["babel.config.mjs", "dist", "node_modules"]
 }
