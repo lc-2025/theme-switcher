@@ -5,6 +5,8 @@ on:
     workflows: [Storage Manager GitFlow]
     types: [completed]
     branches: [main, develop]
+  push:
+    branches: [main, develop]
 permissions:
   contents: read
 env:
@@ -16,7 +18,7 @@ env:
 jobs:
   setup:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' && contains(fromJson('["push", "pull_request"]'), github.event.workflow_run.event) }}
+    if: ${{ (github.event.workflow_run.conclusion == 'success' && contains('pull_request', github.event.workflow_run.event)) || github.event_name == 'push' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
