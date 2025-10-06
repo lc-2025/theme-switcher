@@ -1,10 +1,10 @@
 name: Theme Switcher CI
 run-name: Theme Switcher Continuous-Integration
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_run:
+    workflows: [Storage Manager GitFlow]
+    types: [completed]
+    branches: [main, develop]
 permissions:
   contents: read
 env:
@@ -16,6 +16,7 @@ env:
 jobs:
   setup:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' && contains(fromJson('["push", "pull_request"]'), github.event.workflow_run.event) }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

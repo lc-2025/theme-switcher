@@ -57,6 +57,10 @@ jobs:
         run: npm run deploy
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Release
+        run: ./release/scripts/release.sh
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
   failure:
     runs-on: ubuntu-latest
     permissions: {}

@@ -31,22 +31,19 @@ Third-party linter plugins like ESLint, Prettier or any other similar resource a
 
 ### Branches
 
-There is one main branch, defined as:
+Contributions implement the [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) framework. Please read about its specifications before commit on any branch.
 
-- **main** (Production - _Default_);
+Additionally, in order to allow the CI/CD pipelines to work properly, be sure to stricktly name branches as follows:
 
-Additional branches (i.e. features, bugs, etc.) are named as follows:
-
-- **[api|feature|hotfix]/[subject]**
+- **[feature_api|feature|hotfix]\_[subject]**
 
 ```bash
-i.e.
+# i.e.
 
-feature/someting-new
+feature_api_something-new
+feature_some-new-feat
+hotfix_some-bug
 ```
-
-Contributions implement the [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) framework.
-Please read about its specifications before commit on any branch.
 
 ### Security
 
@@ -57,12 +54,8 @@ To make known their presence to other contributors, add them to the `.env.dist` 
 
 Official Udacity Git commit message style guide is used. Please [consult the docs](http://udacity.github.io/git-styleguide/) for details.
 
-### Merges
+## Releases
 
-- **main**: merging from **[api|feature|hotfix-branch]**;
+Currently, the release is automatically managed via Git Hooks.
 
-### Releases
-
-Currently the release is automatically managed via GIT Hooks.
-The releasing process follows the [SemVer](https://semver.org/) specification.
-Please read about its guidelines before draft any release manually.
+The releasing process follows the [SemVer](https://semver.org/) specification. Please read about its guidelines before draft any release manually.
