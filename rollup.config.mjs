@@ -28,6 +28,7 @@ export default [
       resolve(),
       commonjs(),
       typescript({
+        outputToFilesystem: true,
         tsconfig: './tsconfig.json',
       }),
       babel({

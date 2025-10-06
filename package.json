@@ -8,7 +8,7 @@
     "lint": "eslint --fix . && prettier --write . && prettier --check .",
     "test": "jest --watch",
     "test:ci": "jest",
-    "build": "rollup -c",
+    "build": "rm -rf dist && rollup -c",
     "deploy": "npm publish --tag latest --provenance --access public",
     "prepare": "husky"
   },

@@ -1,5 +1,5 @@
 import { ActionDispatch } from 'react';
-import { ERROR, THEME } from './tokens';
+import { ERROR } from './tokens';
 import type { TStateAction } from '@/types/state/State';
 
 /**
@@ -17,13 +17,4 @@ const checkContext = (
   }
 };
 
-/**
- * @description Light theme helper
- * Verifies if the current theme is the light one
- * @author Luca Cattide
- * @param {string} theme
- * @returns {*}  {boolean}
- */
-const isLightTheme = (theme: string): boolean => theme === THEME.NAME.LIGHT;
-
-export { checkContext, isLightTheme };
+export { checkContext };

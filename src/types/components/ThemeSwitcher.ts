@@ -1,6 +1,6 @@
 type TThemeSwitcher = {
-  iconDark: React.FC;
-  iconLight: React.FC;
+  iconDark: React.ReactNode;
+  iconLight: React.ReactNode;
 };
 
 export type { TThemeSwitcher };
