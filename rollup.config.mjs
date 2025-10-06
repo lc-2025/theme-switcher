@@ -39,6 +39,7 @@ export default [
       }),
       postcss({
         minimize: true,
+        sourceMap: true,
       }),
       terser(),
     ],

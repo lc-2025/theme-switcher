@@ -5,6 +5,7 @@ import { useDispatchContext, useThemeContext } from '@/hooks/State';
 import handleState from '@/state/actions';
 import { ACTION, THEME, WINDOW } from '@/utils/tokens';
 import { TThemeSwitcher } from '@/types/components/ThemeSwitcher';
+import '@/css/index.css';
 
 /**
  * @description Theme switcher component

@@ -3,9 +3,9 @@ coverage
 release
 babel.config.cjs
 CODE_OF_CONDUCT.md
+*.config.mjs
 eslint.config.ts
 jest.*
-rollup.config.mjs
 SECURITY.md
 tsconfig.json
 .*
