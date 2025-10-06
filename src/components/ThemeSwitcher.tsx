@@ -1,17 +1,21 @@
 import { useEffect } from 'react';
 import { Switch } from '@headlessui/react';
-import { useDispatchContext, useThemeContext } from '@/hooks/State';
 import { useStorage } from '@lc-2025/storage-manager';
+import { useDispatchContext, useThemeContext } from '@/hooks/State';
 import handleState from '@/state/actions';
 import { isLightTheme } from '@/utils/utilities';
 import { ACTION, THEME, WINDOW } from '@/utils/tokens';
+import { TThemeSwitcher } from '@/types/components/ThemeSwitcher';
 
 /**
  * @description Theme switcher component
  * @author Luca Cattide
  * @returns {*}  {React.ReactNode}
  */
-const ThemeSwitcher = (): React.ReactNode => {
+const ThemeSwitcher = ({
+  iconDark,
+  iconLight,
+}: TThemeSwitcher): React.ReactNode => {
   let isDark = false;
   const { LABEL } = THEME;
   const { LIGHT, DARK } = THEME.NAME;
@@ -19,6 +23,8 @@ const ThemeSwitcher = (): React.ReactNode => {
   const themeSaved = getStorage(LABEL) ?? '';
   const theme = useThemeContext();
   const dispatch = useDispatchContext();
+  const LightIcon = iconLight;
+  const DarkIcon = iconDark;
 
   useEffect(() => {
     // User preference + system-aware detection
@@ -68,15 +74,10 @@ const ThemeSwitcher = (): React.ReactNode => {
 
   return (
     // Theme Switcher Start
-    <aside className="theme-switcher flex items-center">
-      <h6 className="theme-switch__title hidden">Theme</h6>
-      {isLightTheme(theme) ? (
-        <div className="theme-switch__icon theme-switch__icon--light relative mr-6 h-auto w-full max-w-[48px] min-w-[48px] bg-size-[100%] bg-left-top bg-no-repeat pb-[4.8rem] select-none"></div>
-      ) : (
-        <span className="theme-switch__icon mr-6 text-[3.8rem] select-none">
-          ☀️
-        </span>
-      )}
+    <div className="theme-switcher flex items-center">
+      <div className="theme-switcher__icon theme-switcher__icon--light mr-6 h-auto w-full max-w-[48px] min-w-[48px] pb-[4.8rem] select-none">
+        <LightIcon />
+      </div>
       <Switch
         checked={!isLightTheme(theme)}
         onChange={handleTheme}
@@ -89,14 +90,10 @@ const ThemeSwitcher = (): React.ReactNode => {
           className={`pointer-events-none inline-block size-17 translate-x-0 group-data-[checked]:translate-x-19 ${isLightTheme(theme) ? 'bg-accent group-data-[checked]:bg-primary' : 'bg-primary group-data-[checked]:bg-accent'}`}
         />
       </Switch>
-      {isLightTheme(theme) ? (
-        <div className="theme-switch__icon theme-switch__icon--dark relative ml-6 h-auto w-full max-w-[48px] min-w-[48px] bg-size-[100%] bg-left-top bg-no-repeat pb-[4.8rem] select-none"></div>
-      ) : (
-        <span className="theme-switch__icon ml-6 text-[3.8rem] select-none">
-          🌙
-        </span>
-      )}
-    </aside>
+      <div className="theme-switcher__icon theme-switcher__icon--dark relative ml-6 h-auto w-full max-w-[48px] min-w-[48px] pb-[4.8rem] select-none">
+        <DarkIcon />
+      </div>
+    </div>
     // Theme Switcher End
   );
 };
