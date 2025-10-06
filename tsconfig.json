@@ -28,7 +28,7 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "removeComments": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     // Recommended Options
     "strict": true,
     "verbatimModuleSyntax": false,
@@ -38,5 +38,5 @@
     "skipLibCheck": true
   },
   "include": ["./src/**/*.ts", "./src/**/*.tsx"],
-  "exclude": ["babel.config.mjs", "dist", "node_modules"]
+  "exclude": ["babel.config.mjs", "dist", "node_modules", "./src/__tests__"]
 }

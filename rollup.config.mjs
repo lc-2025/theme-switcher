@@ -1,13 +1,13 @@
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
-import postcss from 'rollup-plugin-postcss';
 import resolve from '@rollup/plugin-node-resolve';
+import postcss from 'rollup-plugin-postcss';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 
 const output = {
-  file: 'dist/src/theme-switcher.js',
+  file: 'dist/src/index.js',
   sourcemap: true,
 };
 
@@ -25,15 +25,21 @@ export default [
       },
     ],
     plugins: [
-      commonjs(),
       resolve(),
-      babel({ babelHelpers: 'bundled' }),
-      external({ includeDependencies: true }),
-      postcss(),
-      terser(),
+      commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
       }),
+      babel({
+        babelHelpers: 'bundled',
+      }),
+      external({
+        includeDependencies: true,
+      }),
+      postcss({
+        minimize: true,
+      }),
+      terser(),
     ],
   },
 ];
