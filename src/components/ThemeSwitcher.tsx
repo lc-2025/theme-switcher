@@ -82,7 +82,6 @@ const ThemeSwitcher = ({
 
     const themeNew = getNewTheme(value);
 
-    // FIXME: New value not set
     setStorage(LABEL, themeNew);
     handleState(
       {
