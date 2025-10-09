@@ -9,7 +9,7 @@ npm i @lc-2025/theme-switcher @headlessui/react tailwindcss
 ```
 
 ```js
-// tailwindcss.config.js
+// tailwind.config.js
 
 const config = {
   content: [
