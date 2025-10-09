@@ -1,17 +1,14 @@
 import alias from '@rollup/plugin-alias';
-import autoprefixer from 'autoprefixer';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import path from 'path';
-import postcss from 'rollup-plugin-postcss';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import url from 'url';
 
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const output = {
   file: 'dist/src/index.js',
   sourcemap: true,
@@ -19,7 +16,7 @@ const output = {
 
 export default [
   {
-    external: ['react', '@headlessui/react'],
+    external: ['@headlessui/react', 'react', 'tailwindcss'],
     input: 'src/index.ts',
     output: [
       {
@@ -48,12 +45,6 @@ export default [
       }),
       external({
         includeDependencies: true,
-      }),
-      postcss({
-        extensions: ['.css'],
-        minimize: true,
-        plugins: [autoprefixer()],
-        sourceMap: true,
       }),
       terser(),
     ],

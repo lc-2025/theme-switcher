@@ -1,6 +1,5 @@
-node_modules
-.husky
 coverage
 dist
-.prettierignore
+node_modules
+.rollup.cache
 *.log

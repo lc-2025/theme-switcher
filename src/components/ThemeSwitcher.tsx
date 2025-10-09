@@ -5,7 +5,6 @@ import { useDispatchContext, useThemeContext } from '@/hooks/State';
 import handleState from '@/state/actions';
 import { ACTION, THEME, WINDOW } from '@/utils/tokens';
 import { TThemeSwitcher } from '@/types/components/ThemeSwitcher';
-import '@/css/index.css';
 
 /**
  * @description Theme switcher component
@@ -95,22 +94,22 @@ const ThemeSwitcher = ({
   return (
     // Theme Switcher Start
     <div className="theme-switcher flex items-center">
-      <div className="theme-switcher__icon theme-switcher__icon--light mr-6 h-auto w-full max-w-[48px] min-w-[48px] pb-[4.8rem] select-none">
+      <div className="theme-switcher__icon theme-switcher__icon--light mr-6 h-auto min-h-[48px] w-full min-w-[48px] select-none">
         {iconLight}
       </div>
       <Switch
         aria-label="Switch Theme"
         checked={!isLightTheme(theme)}
-        className={`theme-switcher__field group data-[focus]:outline-accent relative flex h-19 w-38 cursor-pointer p-1 focus:outline-none data-[focus]:outline-1 ${isLightTheme(theme) ? 'bg-primary data-[checked]:bg-accent p-1' : 'bg-accent data-[checked]:bg-primary border-accent border-2 pt-[0.5px] pr-0 pb-0 pl-[2px]'}`}
+        className={`theme-switcher__field ${isLightTheme(theme) ? 'bg-primary data-[checked]:bg-accent' : 'bg-accent data-[checked]:bg-primary'}`}
         onChange={handleTheme}
         tabIndex={0}
       >
         <span
           aria-hidden="true"
-          className={`pointer-events-none inline-block size-17 translate-x-0 group-data-[checked]:translate-x-19 ${isLightTheme(theme) ? 'bg-accent group-data-[checked]:bg-primary' : 'bg-primary group-data-[checked]:bg-accent'}`}
+          className={`field__slider ${isLightTheme(theme) ? 'bg-accent group-data-[checked]:bg-primary' : 'bg-primary group-data-[checked]:bg-accent'}`}
         />
       </Switch>
-      <div className="theme-switcher__icon theme-switcher__icon--dark relative ml-6 h-auto w-full max-w-[48px] min-w-[48px] pb-[4.8rem] select-none">
+      <div className="theme-switcher__icon theme-switcher__icon--dark ml-6 h-auto min-h-[48px] w-full min-w-[48px] select-none">
         {iconDark}
       </div>
     </div>

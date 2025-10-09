@@ -1,11 +1,9 @@
 coverage
-/src
 release
-babel.config.cjs
+/src
 CODE_OF_CONDUCT.md
-*.config.mjs
-eslint.config.ts
 jest.*
 SECURITY.md
 tsconfig.json
 .*
+*.config.*
