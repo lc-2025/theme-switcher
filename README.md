@@ -5,7 +5,7 @@
 ```bash
 # Assuming React already installed
 
-npm i @lc-2025/theme-switcher @headlessui-react tailwindcss
+npm i @lc-2025/theme-switcher @headlessui/react tailwindcss
 ```
 
 ```js
