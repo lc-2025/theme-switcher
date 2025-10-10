@@ -37,6 +37,6 @@
     "moduleDetection": "force",
     "skipLibCheck": true
   },
-  "include": ["./src/types/globals.d.ts", "./src/**/*.ts", "./src/**/*.tsx"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
   "exclude": ["babel.config.mjs", "dist", "node_modules", "./src/__tests__"]
 }
