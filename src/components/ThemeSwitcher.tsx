@@ -46,9 +46,9 @@ const ThemeSwitcher = ({
     let iconVersion: React.ReactNode;
 
     if ((icon as TStyleIcon).dark || (icon as TStyleIcon).light) {
-      const currentIcon = icon as TStyleIcon;
+      const iconCurrent = icon as TStyleIcon;
 
-      iconVersion = isLightTheme(theme) ? currentIcon.light : currentIcon.dark;
+      iconVersion = isLightTheme(theme) ? iconCurrent.light : iconCurrent.dark;
     } else {
       iconVersion = icon as React.ReactNode;
     }
