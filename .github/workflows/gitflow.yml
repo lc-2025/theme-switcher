@@ -1,5 +1,5 @@
-name: Storage Manager GitFlow
-run-name: Storage Manager GitFlow ruleset
+name: Theme Switcher GitFlow
+run-name: Theme Switcher GitFlow ruleset
 on:
   pull_request:
 permissions:
@@ -10,5 +10,5 @@ jobs:
     steps:
       - name: Check branches
         # Available merges check - See: ../../release/scripts/gitflow.sh
-        if: ${{ (github.base_ref == 'main' && !contains(fromJSON('["release", "hotfix"]'), github.head_ref)) || (github.base_ref == 'develop' && !contains(fromJSON('["feature", "release", "hotfix"]'), github.head_ref)) }}
+        if: ${{ (github.base_ref == 'main' && !contains(fromJSON('["release", "hotfix", "dependabot"]'), github.head_ref)) || (github.base_ref == 'develop' && !contains(fromJSON('["feature", "release", "hotfix"]'), github.head_ref)) }}
         run: ./release/scripts/gitflow.sh

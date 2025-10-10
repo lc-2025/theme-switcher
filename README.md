@@ -1,14 +1,44 @@
 # Theme Switcher
 
-## TODO:
+A theme style selector.
+
+![Theme Switcher](./docs/preview.gif 'Theme Switcher')
+[![Theme Switcher CI](https://github.com/lc-2025/theme-switcher/actions/workflows/ci.yml/badge.svg)](https://github.com/lc-2025/theme-switcher/actions/workflows/ci.yml) [![Theme Switcher CD](https://github.com/lc-2025/theme-switcher/actions/workflows/cd.yml/badge.svg)](https://github.com/lc-2025/theme-switcher/actions/workflows/cd.yml)
+
+## About
+
+TODO:
+
+## Features
+
+TODO:
+
+## Stack
+
+- **Languages**: JavaScript, Typescript, YAML, Bash
+- **Environments**: DOM
+- **Libraries**: Storage Manager, HeadlessUI, Testing Library
+- **Frameworks**: React, TailwindCSS, Jest
+- **Linters/Plugins**: ESLint, Prettier
+- **Compilers**: Babel, TypeScript
+- **Bundlers**: Rollup
+- **Testing**: Jest, Testing Library
+- **Versioning**: GitHub, Husky
+- **Continuous-Integration/Delivery**: GitHub Actions
+- **Deployment**: NPM Registry
 
 ## Getting Started
 
+The package production version is available on _NPM_ at [https://npmjs.com/package/@lc-2025/theme-switcher](https://npmjs.com/package/@lc-2025/theme-switcher).
+For any contribution, maintanance and/or trial needs, please refer to the following specifications.
+
 ### Requirements
 
-(Please refer to the peer dependencies)
+TODO: (Please refer to the peer dependencies)
 
 ### Installation
+
+On terminal, from project root:
 
 ```bash
 # Assuming React already installed
@@ -18,6 +48,8 @@ npm i @lc-2025/theme-switcher @headlessui/react tailwindcss
 ```
 
 ### Configuration
+
+TODO: Refactor/Update
 
 ```js
 // tailwind.config.js
@@ -77,6 +109,8 @@ export default config;
 ```
 
 ### Usage
+
+TODO: Refactor/Update
 
 ```css
 /* MyComponent.css */
@@ -147,3 +181,120 @@ const MyComponent = () => {
   );
 };
 ```
+
+### API
+
+#### Props
+
+- `iconDark`
+
+```ts
+ReactNode | { darkIcon?: ReactNode, lightIcon?: ReactNode }
+```
+
+Defines the dark theme icon or its variants
+
+- `iconLight`
+
+```ts
+ReactNode | { darkIcon?: ReactNode, lightIcon?: ReactNode }
+```
+
+Defines the light theme icon or its variants
+
+- `style` (optional)
+
+[See below](#style)
+
+Defines the component CSS classes
+
+#### Style
+
+- `container` (optional)
+
+```ts
+string;
+```
+
+Defines the component container
+
+- `field` (optional)
+
+```ts
+{ dark?: ReactNode, light?: ReactNode }
+```
+
+Defines the component `Switch` child (slider backgorund) variants
+
+- `iconDark` (optional)
+
+```ts
+{ dark?: ReactNode, light?: ReactNode }
+```
+
+Defines the component dark icon variants
+
+- `iconLight` (optional)
+
+```ts
+{ dark?: ReactNode, light?: ReactNode }
+```
+
+Defines the component light icon variants
+
+- `switch` (optional)
+
+```ts
+{ dark?: ReactNode, light?: ReactNode }
+```
+
+Defines the component slider child variants
+
+## Contributing
+
+### Setting Up
+
+On terminal, from project root:
+
+- To lint the sources
+
+```bash
+npm run lint
+```
+
+- To build the production version
+
+```bash
+npm run build
+```
+
+### Tests
+
+#### Unit
+
+On terminal, from project root:
+
+- To run the unit tests in `development` mode
+
+```bash
+npm run test
+```
+
+- To run the tests in `testing` mode (staging or content-integration/delivery environments)
+
+```bash
+npm run test:ci
+```
+
+### Deploy
+
+_Theme Switcher_ is integrated and delivered to production via _GitHub Actions_ workflows pipeline, where the package is being set up, tested and built.
+Then the artifacts are deployed on _NPM_ registry available at [https://npmjs.com/package/@lc-2025/theme-switcher](https://npmjs.com/package/@lc-2025/theme-switcher).
+
+- To deploy the production version
+
+```bash
+npm run deploy
+```
+
+Please read more about required best practices on the specific [contributing reference document](./.github/CONTRIBUTING.md).

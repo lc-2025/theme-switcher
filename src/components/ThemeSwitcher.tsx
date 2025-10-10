@@ -27,10 +27,10 @@ const ThemeSwitcher = ({
 }: TThemeSwitcher): React.ReactNode => {
   const { LABEL } = THEME;
   const { LIGHT, DARK } = THEME.NAME;
+  const dispatch = useDispatchContext();
   const { getStorage, setStorage } = useStorage();
   const themeSaved = getStorage(LABEL) ?? '';
   const theme = useThemeContext();
-  const dispatch = useDispatchContext();
 
   useEffect(() => {
     initTheme();
