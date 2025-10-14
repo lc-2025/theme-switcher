@@ -4,6 +4,7 @@ import { useDispatchContext, useThemeContext } from '@/hooks/State';
 import { useEffect } from 'react';
 import { useStorage } from '@lc-2025/storage-manager';
 import { Switch } from '@headlessui/react';
+import { TEST } from '@/utils/tokens';
 import {
   TStyleIcon,
   TStyleMode,
@@ -25,6 +26,7 @@ const ThemeSwitcher = ({
   iconLight,
   style,
 }: TThemeSwitcher): React.ReactNode => {
+  const { CONTAINER, SLIDER } = TEST.ID;
   const { LABEL } = THEME;
   const { LIGHT, DARK } = THEME.NAME;
   const dispatch = useDispatchContext();
@@ -134,6 +136,7 @@ const ThemeSwitcher = ({
     // Theme Switcher Start
     <div
       className={`theme-switcher ${(style && style.container) ?? 'flex items-center'}`}
+      data-testid={CONTAINER}
     >
       <div
         className={`theme-switcher__icon theme-switcher__icon--light ${style && style.iconLight ? getStyle(style.iconLight) : 'mr-6 select-none'}`}
@@ -144,6 +147,7 @@ const ThemeSwitcher = ({
         aria-label="Switch Theme"
         checked={!isLightTheme(theme)}
         className={`theme-switcher__field group relative flex rounded-full p-1 ease-in-out focus:not-data-focus:outline-none data-focus:outline ${style && style.field ? getStyle(style.field) : `h-12 w-24 cursor-pointer ${isLightTheme(theme) ? 'bg-black/10 data-checked:bg-black/10 data-focus:outline-black' : 'bg-white/10 data-checked:bg-white/10 data-focus:outline-white'}`}`}
+        data-testid={SLIDER}
         onChange={handleTheme}
         tabIndex={0}
       >

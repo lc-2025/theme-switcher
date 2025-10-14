@@ -17,8 +17,8 @@ type TStyleMode = {
 };
 
 type TThemeSwitcher = {
-  iconDark: React.ReactNode & TStyleIcon;
-  iconLight: React.ReactNode & TStyleIcon;
+  iconDark: React.ReactNode | TStyleIcon;
+  iconLight: React.ReactNode | TStyleIcon;
   style?: TStyle;
 };
 

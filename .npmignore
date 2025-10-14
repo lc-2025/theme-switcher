@@ -1,9 +1,10 @@
 coverage
+docs
 release
 /src
 CODE_OF_CONDUCT.md
 jest.*
 SECURITY.md
-tsconfig.json
+tsconfig*
 .*
 *.config.*

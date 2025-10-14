@@ -6,7 +6,7 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "target": "esnext",
-    "types": [],
+    "types": ["jest", "@testing-library/jest-dom"],
     "lib": ["DOM", "ESNext"],
     "paths": {
       "@/*": ["./src/*"]
@@ -38,5 +38,5 @@
     "skipLibCheck": true
   },
   "include": ["./src/**/*.ts", "./src/**/*.tsx"],
-  "exclude": ["babel.config.mjs", "dist", "node_modules", "./src/__tests__"]
+  "exclude": ["babel.config.mjs", "dist", "node_modules"]
 }

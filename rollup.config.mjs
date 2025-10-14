@@ -38,7 +38,7 @@ export default [
       commonjs(),
       typescript({
         outputToFilesystem: true,
-        tsconfig: './tsconfig.json',
+        tsconfig: './tsconfig.build.json',
       }),
       babel({
         babelHelpers: 'bundled',

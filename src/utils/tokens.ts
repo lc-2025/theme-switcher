@@ -1,6 +1,24 @@
 const ERROR = {
   CONTEXT: 'Context must be used within a `Provider`',
 };
+const TEST = {
+  CLASS: {
+    DARK: 'icon-dark--dark',
+    LIGHT: 'icon-light--light',
+  },
+  CHECKED: 'data-checked',
+  ID: {
+    CONTAINER: 'test-container',
+    SLIDER: 'test-slider',
+    VARIANT: {
+      DARK: 'test-dark',
+      LIGHT: 'test-light',
+    },
+  },
+  STYLE: {
+    container: 'my-container',
+  },
+};
 const THEME = {
   LABEL: 'theme',
   NAME: {
@@ -27,4 +45,4 @@ const WINDOW = {
   },
 };
 
-export { ACTION, ERROR, STATE, THEME, WINDOW };
+export { ACTION, ERROR, STATE, TEST, THEME, WINDOW };
