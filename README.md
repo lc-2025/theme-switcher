@@ -134,7 +134,7 @@ createRoot(document.getElementById('root')!).render(
 /* ... */
 ```
 
-- Include \_Theme Switcher in your App (basic usage):
+- Include _Theme Switcher_ in your App (basic usage):
 
 ```jsx
 // MyComponent.jsx
@@ -297,17 +297,8 @@ import '../css/MyComponent.css';
     //...
     {/* Custom styles */}
     <ThemeSwitcher
-      iconDark={{
-        // Explicit definition
-        dark: <>{'>8-|'}</>,
-        light: <>{'D:-)'}</>
-      }}
-      iconLight={
-        // Conditional rendering
-        theme === 'light' ?
-          <h2>Light</h2> :
-          <>☀️</>
-      }
+      iconDark={<>Dark</>}
+      iconLight={<>Light</>}
       style={styleCustom}
     />
     //...
