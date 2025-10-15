@@ -2,7 +2,9 @@
 
 ## Styles & Coding
 
-- JavaScript follows the [AirBnB Style Guide](https://github.com/airbnb/javascript) conventions;
+- HTML and CSS follow in general the [Google Style Guide conventions](https://github.com/google/styleguide);
+- Custom CSS follows the [BEM convention](http://getbem.com/);
+- JavaScript and TypeScript follow the [AirBnB Style Guide](https://github.com/airbnb/javascript) conventions;
 
 Please be sure to check and follow them before attempt any modification to the sources, in order to preserve the general integrity of the project patterns.
 Third-party linter plugins like ESLint, Prettier or any other similar resource are welcome (configuration files of the mentioned ones are already present).
