@@ -7,8 +7,8 @@ A theme style selector.
 
 ## About
 
-_Theme Switcher_ is a stateful _React_ component based on _TailwindCSS_ and _HeadlessUI_ agnostic library for Light and Dark theme modification.
-Created to rely on a ready-to-go utility and speed up the development process by reusing it across different projects. Totally customizable and adaptable.
+_Theme Switcher_ is a stateful _React_ component based on _TailwindCSS_ and _HeadlessUI_ agnostic library for Light and Dark theme management.
+A totally customizable and adaptable ready-to-go utility provided as a NPM _package_ to speed up the workflow.
 
 ## Features
 
@@ -81,7 +81,7 @@ export default config;
 /**
 * Register Theme Switcher as source
 * Please note that the path is relative to file location, i.e.
-- <root>/src/style.css -> @source "../node_modules/...
+* - <root>/src/style.css -> @source "../node_modules/...
 */
 @source "../node_modules/@lc-2025/theme-switcher/dist";
 
@@ -95,6 +95,7 @@ export default config;
 
 ```jsx
 // i.e. {main.js}
+
 // ...
 
 createRoot(document.getElementById('root')!).render(
@@ -113,6 +114,7 @@ createRoot(document.getElementById('root')!).render(
 
 ```css
 /* i.e. {global|index}.css  */
+
 /* ... */
 
 @theme {
@@ -372,6 +374,7 @@ return (
 // MyComponent.jsx
 
   // ...
+
   const theme = useThemeContext();
 
   // ...
