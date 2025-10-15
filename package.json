@@ -17,9 +17,16 @@
     "url": "git+https://github.com/lc-2025/theme-switcher.git"
   },
   "keywords": [
-    "theme",
-    "switcher",
-    "react"
+    "theme-switcher",
+    "dark-mode",
+    "light-mode",
+    "react-component",
+    "tailwindcss",
+    "headlessui",
+    "typescript",
+    "npm-package",
+    "ui-library",
+    "open-source"
   ],
   "author": "LC",
   "license": "MIT",
@@ -27,7 +34,7 @@
     "url": "https://github.com/lc-2025/theme-switcher/issues"
   },
   "homepage": "https://github.com/lc-2025/theme-switcher#readme",
-  "description": "",
+  "description": "Theme Switcher is a stateful React component based on TailwindCSS and HeadlessUI agnostic library for Light and Dark theme management",
   "dependencies": {
     "@lc-2025/storage-manager": "^1.0.1"
   },
