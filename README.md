@@ -8,7 +8,7 @@ A theme style selector.
 ## About
 
 _Theme Switcher_ is a stateful _React_ component based on _TailwindCSS_ and _HeadlessUI_ agnostic library for Light and Dark theme management.
-A totally customizable and adaptable ready-to-go utility provided as a NPM _package_ to speed up the workflow.
+A totally customizable and adaptable ready-to-go utility provided as a _NPM_ package to speed up the workflow.
 
 ## Features
 
