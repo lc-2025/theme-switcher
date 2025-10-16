@@ -55,7 +55,7 @@ npm i @lc-2025/theme-switcher tailwindcss @headlessui/react
 - Update the _TailwindCSS_ configuration:
 
 ```js
-// tailwind.config.js
+// tailwind.config.{js|ts}
 
 const config = {
   content: [
@@ -94,7 +94,7 @@ export default config;
 - Update the Root component:
 
 ```jsx
-// i.e. {main.js}
+// i.e. main.{jsx|tsx}
 
 // ...
 
@@ -139,7 +139,7 @@ createRoot(document.getElementById('root')!).render(
 - Include _Theme Switcher_ in your App (basic usage):
 
 ```jsx
-// MyComponent.jsx
+// MyComponent.{jsx|tsx}
 
 import { useEffect } from 'react';
 import { ThemeSwitcher, useThemeContext } from '@lc-2025/theme-switcher';
@@ -148,8 +148,8 @@ const MyComponent = () => {
   // Styles definition
   const style = {
     // Pass class names to style properties
-    iconLight: 'my-light-icon',
     iconDark: 'my-dark-icon',
+    iconLight: 'my-light-icon',
   };
   // i.e. Check selected theme
   const theme = useThemeContext();
@@ -187,7 +187,7 @@ const MyComponent = () => {
 - With _TailwindCSS_:
 
 ```jsx
-// MyComponent.jsx
+// MyComponent.{jsx|tsx}
 
   // ...
 
@@ -196,7 +196,7 @@ const MyComponent = () => {
    * Theme Switcher is built upon a default style as fallback
    * Declare TailwindCSS classes or your custom ones to
    * change the component layout/template.
-   * i.e. Default approach: TailwindCSS classes
+   * Default approach: TailwindCSS classes
    */
   const styleOverride = {
     container: 'flex items-center mt-8',
@@ -265,12 +265,12 @@ const MyComponent = () => {
 ```
 
 ```jsx
-// MyComponent.jsx
+// MyComponent.{jsx|tsx}
 
 /**
- * Assuming MyComponent.{css|jsx} under:
+ * Assuming MyComponent.{css|jsx|tsx} under:
  * - <root>/css/MyComponent.css
- * - <root>/components/MyComponent.jsx
+ * - <root>/components/MyComponent.{jsx|tsx}
  */
 import '../css/MyComponent.css';
 
@@ -348,14 +348,14 @@ import '../css/MyComponent.css';
 ```
 
 ```jsx
-// MyComponent.jsx
+// MyComponent.{jsx|tsx}
 
 /**
  * With custom CSS file only
  *
- * Assuming MyComponent.{css|jsx} under:
+ * Assuming MyComponent.{css|jsx|tsx} under:
  * - <root>/css/MyComponent.css
- * - <root>/components/MyComponent.jsx
+ * - <root>/components/MyComponent.{jsx|tsx}
  */
 import '../css/MyComponent.css';
 
@@ -371,7 +371,7 @@ return (
 - Icon variants:
 
 ```jsx
-// MyComponent.jsx
+// MyComponent.{jsx|tsx}
 
   // ...
 
