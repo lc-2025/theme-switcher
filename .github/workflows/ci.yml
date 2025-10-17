@@ -2,7 +2,7 @@ name: Theme Switcher CI
 run-name: Theme Switcher Continuous-Integration
 on:
   workflow_run:
-    workflows: [Storage Manager GitFlow]
+    workflows: [Theme Switcher GitFlow]
     types: [completed]
     branches: [main, develop]
   push:
