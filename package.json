@@ -1,6 +1,6 @@
 {
   "name": "@lc-2025/theme-switcher",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "type": "module",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
